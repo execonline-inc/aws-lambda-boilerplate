@@ -1,32 +1,16 @@
-import BitmovinTranscode from './BitmovinTranscode';
-
 'use strict';
-require('dotenv').config();
-const jf = require('jsonfile');
 
-function processSNS(event) {
-  const message = event.Records[0].Sns.Message;
-  return message;
-}
+module.exports.hello = (event, context, callback) => {
+  const response = {
+    statusCode: 200,
+    body: JSON.stringify({
+      message: 'Go Serverless v1.0! Your function executed successfully!',
+      input: event,
+    }),
+  };
 
-function entry(event, context, callback) {
-  console.log('Starting new bitmovin transcode job');
-  const message = processSNS(event);
-  BitmovinTranscode.getVideoLink(message);
-  callback(null, 'Success!');
-}
+  callback(null, response);
 
-function test() {
-  console.log('Starting TEST bitmovin transcode');
-  // const transcoder = new BitmovinTranscode();
-  const event = jf.readFileSync('event.json');
-  const message = processSNS(event);
-  // BitmovinTranscode.getVideoLink(message);
-  // transcoder.getVideoLink(message);
-  getVideoLink(message);
-}
-
-module.exports = {
-  entry,
-  test,
+  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
+  // callback(null, { message: 'Go Serverless v1.0! Your function executed successfully!', event });
 };
