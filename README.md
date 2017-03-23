@@ -2,7 +2,9 @@
 
 ## Installation
 We recommend using the [Serverless](https://serverless.com/) framework.
+
 `npm install serverless -g`
+
 `serverless create --template aws-nodejs`
 
 `npm install`
