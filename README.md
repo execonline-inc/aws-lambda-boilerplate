@@ -1,4 +1,5 @@
 # aws-lambda-boilerplate
+Use this boilerplate to get started creating your next Lambda function with Node.js
 
 ## Installation
 We recommend using the [Serverless](https://serverless.com/) framework.
