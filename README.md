@@ -3,6 +3,12 @@ Use this boilerplate to get started creating your next Lambda function with Node
 
 ## Installation
 
+Install Node
+
+```
+nvm install
+```
+
 ```
 git clone git@github.com:execonline-inc/aws-lambda-boilerplate.git
 cp -r aws-lambda-boilerplate your-lambda-name
@@ -10,7 +16,7 @@ cd your-lambda-name
 rm -rf .git
 ```
 
-`npm install`
+`yarn install`
 
 Add to serverless.yml
 ```
