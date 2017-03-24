@@ -2,11 +2,13 @@
 Use this boilerplate to get started creating your next Lambda function with Node.js
 
 ## Installation
-We recommend using the [Serverless](https://serverless.com/) framework.
 
-`npm install serverless -g`
-
-`serverless create --template aws-nodejs`
+```
+git clone git@github.com:execonline-inc/aws-lambda-boilerplate.git
+cp -r aws-lambda-boilerplate your-lambda-name
+cd your-lambda-name
+rm -rf .git
+```
 
 `npm install`
 
@@ -23,5 +25,5 @@ functions:
 aws-lambda-boilerplate is ES6 ready.  Functions in handler.js will execute. `serverless deploy` deploys function to AWS.
 
 ## Development
-1. Test your function locally in a node console before attempting to deploy 
+1. Test your function locally in a node console before attempting to deploy
 1. `SLS_DEBUG='*' serverless webpack invoke --function test` to test with serverless locally.  You may need to set SLS_DEDUG: `export SLS_DEBUG='*'`
