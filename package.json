@@ -9,24 +9,24 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.14.0",
-    "babel-core": "^6.14.0",
-    "babel-eslint": "^6.1.2",
-    "babel-loader": "^6.2.5",
-    "babel-plugin-transform-runtime": "^6.15.0",
-    "babel-preset-es2015": "^6.14.0",
-    "babel-preset-stage-0": "^6.5.0",
-    "eslint": "^3.6.0",
-    "eslint-config-airbnb": "^12.0.0",
-    "eslint-config-es2015": "^1.1.0",
-    "eslint-plugin-import": "^1.16.0",
-    "eslint-plugin-jasmine": "^1.8.1",
-    "jasmine": "^2.5.2",
-    "serverless-webpack": "^1.0.0-rc.1",
-    "webpack": "^1.13.2"
+    "babel-cli": "latest",
+    "babel-core": "latest",
+    "babel-eslint": "latest",
+    "babel-loader": "latest",
+    "babel-plugin-transform-runtime": "latest",
+    "babel-preset-es2015": "latest",
+    "babel-preset-stage-0": "latest",
+    "eslint": "latest",
+    "eslint-config-airbnb": "latest",
+    "eslint-config-es2015": "latest",
+    "eslint-plugin-import": "latest",
+    "eslint-plugin-jasmine": "latest",
+    "jasmine": "latest",
+    "serverless-webpack": "latest",
+    "webpack": "latest"
   },
   "dependencies": {
-    "babel-runtime": "^6.11.6",
-    "json-loader": "^0.5.4"
+    "babel-runtime": "latest",
+    "json-loader": "latest"
   }
 }
