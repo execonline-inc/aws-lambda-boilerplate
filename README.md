@@ -18,15 +18,6 @@ rm -rf .git
 
 `yarn install`
 
-Add to serverless.yml
-```
-functions:
-  entry:
-    handler: handler.entry
-  test:
-    handler: handler.test
-```
-
 ## Usage
 aws-lambda-boilerplate is ES6 ready.  Functions in handler.js will execute. `serverless deploy` deploys function to AWS.
 
