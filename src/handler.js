@@ -1,8 +1,8 @@
-function entry(event, context, callback) {
+const entry = (event, context, callback) => {
   //Method to run production code
 }
 
-function test() {
+const test = e => {
   //Method to run test code
   console.log("This is a test")
 }
