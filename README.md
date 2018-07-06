@@ -1,14 +1,20 @@
 # aws-lambda-boilerplate
 Use this boilerplate to get started creating your next Lambda function with Node.js
 
-## Installation
+## Setup
 
-Install Node
-
+Install nvm if you don't already have it installed.
 ```
-nvm install
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 ```
 
+Install Node (v8.10).
+```
+nvm install 8.10
+nvm use 8.10
+```
+
+Clone the boilerplate and rename the repository.
 ```
 git clone git@github.com:execonline-inc/aws-lambda-boilerplate.git
 cp -r aws-lambda-boilerplate your-lambda-name
@@ -16,46 +22,37 @@ cd your-lambda-name
 rm -rf .git
 ```
 
-`yarn install`
-
-## Usage
-aws-lambda-boilerplate is ES6 ready.  Functions in handler.js will execute. `serverless deploy` deploys function to AWS.
-
-## Deployment
-
-When deploying with serverless, you can set different stages that you want to deploy to.
-The stage name will be added to the service name. e.g if service name is `report-virus-lambda`, when you run
-
-`SLS_DEBUG='*' serverless deploy --stage development --verbose`,
-
-the Lambda will be deployed as  `report-virus-lambda-development`.
-
-This is great if you want to have the same lambda but with different
-configuration for environments e.g staging and production
-
-`report-virus-lambda-staging`, `report-virus-lambda-production`
-
-If you don't specify a stage, serverless adds the dev stage to it
-by default so if you run `serverless deploy`, what you get is `report-virus-lambda-dev`
-
-## What happens if I want to deploy with just a name?
-
-Assuming you want your lambda name to be named `report-virus-lambda`
-because it's the same lambda that is used for all environments,
-
-Then you can edit your `serverless.yml` file with this
-
+Install yarn if you don't already have it installed (https://yarnpkg.com/lang/en/docs/install/#mac-stable). Then, install the dependencies
 ```
-  service: report-virus
-  stage: lambda
+yarn install
 ```
-
-So if you run `serverless deploy`, your lambda will be deployed as `report-virus-lambda`
-
-or you can set your service as `report-virus` in the `serverless.yml` file and
-run `SLS_DEBUG='*' serverless deploy --stage lambda --verbose`
 
 
 ## Development
-1. Test your function locally in a node console before attempting to deploy
-1. `SLS_DEBUG='*' serverless webpack invoke --function test` to test with serverless locally.  You may need to set SLS_DEDUG: `export SLS_DEBUG='*'`
+
+Run ``serverless invoke local`` to run a lambda function locally on your machine. In order to use serverless in the command
+lines, you will need to use npm to install servleress globaly.
+
+```
+npm install -g serverless
+```
+
+Then, to run the test handler function:
+
+```
+serverless invoke local --function test
+```
+
+## Deployment
+
+#Deploy a Service:
+Use this when you have made changes to your Functions, Events or Resources in serverless.yml or you simply want to deploy all changes within your Service at the same time.
+```
+serverless deploy -v
+```
+
+#Deploy the Function:
+Use this to quickly upload and overwrite your AWS Lambda code on AWS, allowing you to develop faster.
+```
+serverless deploy function -f hello
+```
